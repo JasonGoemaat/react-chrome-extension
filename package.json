@@ -13,11 +13,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "buildoriginal": "react-scripts build",
+    "build": "react-scripts build && yarn post",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "post": "node scripts/post.js",
-    "all": "react-scripts build && node scripts/post.js popup"
+    "post": "node scripts/post.js popup"
   },
   "eslintConfig": {
     "extends": "react-app"

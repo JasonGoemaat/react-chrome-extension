@@ -5,6 +5,18 @@ import App from './App';
 import Popup from './Pages/Popup';
 import * as serviceWorker from './serviceWorker';
 
+const chrome = window.chrome;
+if (chrome && chrome.runtime && chrome.runtime.id) {
+  console.log('running in chrome extension with id:', chrome.runtime.id);
+  if (chrome.extension.getBackgroundPage() === window) {
+    console.log('running in background page');
+  } else {
+    console.log('not running in background page');
+  }
+} else {
+  console.log('not running as a chrome extension');
+}
+
 if (document.getElementById('root')) {
   ReactDOM.render(
     <React.StrictMode>
